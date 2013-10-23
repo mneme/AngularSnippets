@@ -1,0 +1,6 @@
+<div ng-mousedown="startDrag($event)" ng-mouseup="stopDrag($event)" ng-mouseleave="stopDrag($event)">
+  <div ng-repeat="element in elements" ng-mouseenter="toggleIfDrag(element, $event)">
+    <input type="checkbox" ng-model="element.selected" ng-change="change(element)"></input>
+    <label ng-mousedown="toggle(element, $event)">{{element.value}}</label>
+  </div>
+</div>  
