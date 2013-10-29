@@ -1,0 +1,21 @@
+<div class="tag-picker" ng-click="focusInput()">
+    <ul  class="tag-picker--tags-list" ng-hide="pickedTags.length === 0">
+        <li ng-repeat="tag in pickedTags" class="tag-picker--tag theme-light" title="Ta bort" ng-click="unpick($event)">{{tag.value}}</li>
+    </ul>
+    <div class="tag-picker--input">
+       <div class="InputContainer">
+          <div class="InputContainer-input-wide">
+            <span class="InputContainer-input-icon icon-tag icon--small"></span>
+             <input ng-model="tag" ng-keydown="tagKeyPress($event)" baf-forcefocus="doFocus" baf-onblur="addSelectedTag()" />
+          </div>
+        </div>
+        <ul ng-if="hits.length" class="tag-picker--suggestions">
+            <li ng-repeat="hit in hits" ng-mouseenter="selectThisItem()" ng-class="{'theme-brand': selectedIndex == $index}" class="tag-picker--suggestion theme-mid">{{hit.value}}</li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
