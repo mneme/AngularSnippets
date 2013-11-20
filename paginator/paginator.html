@@ -1,0 +1,17 @@
+<ul class="pure-paginator">
+	<li>
+		<button class="icon--small icon-first" ng-click="firstPage()" title="Gå till första sidan" ng-disabled="!hasPrevPage()"></button>
+	</li>
+	<li>
+		<button ng-click="prevPage()" class="icon--small icon-prev" title="Gå till föregående sida" ng-disabled="!hasPrevPage()"></button>
+	</li>
+	<li ng-repeat="no in pages">
+		<button class="icon--small-text" ng-class="{'pure-button-active': no === page}" ng-click="setPage(no)" title="Gå till sida {{no}} av {{getNumberOfPages()}}">{{no}}</button>
+	</li>
+	<li>
+		<button class="icon--small icon-next" ng-click="nextPage()" title="Gå till nästa sida" ng-disabled="!hasNextPage()"></button>
+	</li>
+	<li>
+		<button class="icon--small icon-last" ng-click="lastPage()" title="Gå till sista sidan" ng-disabled="!hasNextPage()"></button>
+	</li>
+</ul>
